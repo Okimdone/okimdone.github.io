@@ -6,18 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 
-    <link rel="stylesheet" href="css/basic-style.css">
+    <link rel="stylesheet" href="static/css/basic-style.css">
 </head>
 
 <body>
     <div class="scan-lines">
         <div></div>
     </div>
-    <!-- <div id="main"><h1>TESTING </h1></div> -->
     <header>
-        <a href="/">Achraf Bougadre</a>
+        <a class='header-logo' href="/">Achraf Bougadre</a>
         <nav>
             <a href="/">Home</a>
             <a href="blog/">Blog</a>
@@ -26,29 +25,124 @@
         </nav>
     </header>
     <main>
-        <div id="about">
-            <h1>
-                Achraf Bougadre
-            </h1>
-            <h2>Data Scientist | Big Data Engineer</h2>
-            <a href="mailto:abougadre@gmail.com"> Contact</a>
-        </div>
-        <div id="experience">
+        <section id="about">
+            <figure class="img img-glitch">
+                <figure class="img img-glitch-anim-1 img-glitch-meta"></figure>
+                <figure class="img img-glitch-anim-2 img-glitch-meta"></figure>
+                <figure class="img img-glitch-anim-3 img-glitch-meta"></figure>
+                <figure class="img img-glitch-flash img-glitch-meta"></figure>
+            </figure>
+            <div id="about-content">
+                <h1>
+                    Achraf Bougadre
+                </h1>
+                <h2>Data Scientist | Big Data Engineer</h2>
+                <a href="mailto:abougadre@gmail.com"> Contact</a>
+            </div>
+        </section>
+        <section id="experience">
             <h3>Experience</h3>
-            <div></div>
-        </div>
-        <div id="education">
+            <div>
+                <div class="timeline">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <span class="year">Mar. 2021 — Sep. 2021</span>
+                        <h4>Data Scientist</h4>
+                        <ul class="timeline-description">
+                            <li>Developed and maintained tools and pipelines for automating big data processes using Docker, Apache Airflow, Kafka, Spark and SQL.</li>
+                            <li>Constructed and trained machine learning models such as Classification, Cluster Analysis and Segmentation using MLlib and TensorFlow</li>
+                            <li>Served the final version of the model on a REST API using the tensorflow/serving docker image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-icon">Sep. 2019 — Oct. 2020</div>
+                    <div class="timeline-content">
+                        <span class="year"></span>
+                        <h4>Data Scientist</h4>
+                        <ul class="timeline-description">
+                            <li>Developed and implemented predictive modeling, statistical analysis, machine learning, data mining and other aspects of data analytics to collect, explore and extract insights from structured and unstructured data using Spark and Python. </li>
+                            <li>Built data warehousing solution with custom ETL scripts in Python to extract and house data from multiple sources.</li>
+                            <li>Constructed machine learning algorithms such as Regression, Classification, Cluster Analysis, Segmentation, Time Series and A/B testing to improve the performance of overall models without compromising model quality. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <span class="year">Mar. 2019 — Jul. 2019</span>
+                        <h4>BI Engineer</h4>
+                        <ul class="timeline-description">
+                            <li>Participated in all parts of ETL development and building data pipelines such as data mining, data collection, data cleaning, developing models, validation, visualization, performed gap analysis and data identification. </li>
+                            <li>Translated the business requirements and performed ETL into the applications.</li>
+                            <li>Created interactive reports and visualization using advanced techniques in Tableau and PowerBI.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <span class="year">June. 2018 — Dec. 2018</span>
+                        <h4>Technician</h4>
+                        <ul class="timeline-description">
+                            <li>
+                                Designed networks, connected and fixed hardware like printers and touch screen ordering machines
+                            </li>
+                            <li>Participated in all parts of the installation and configuration of Linux/Windows 10/ Windows server 2016 on server and host computers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
             <h3>Education</h3>
-            <div></div>
-        </div>
+            <div>
+                <div class="education-row">
+                    <div>
+                        <h4>Ph.D. Candidate in M.L. and Image Processing</h4>
+                        <p>
+                            I am thrilled to be a part of this Ph.D. program at UCA, since it involves things I'm passioned about : ML, RL and
+                            Imagine processing.
+                        </p>
+                    </div>
+                    <div><img src="static/imgs/home/UCA_logo.png" alt="UCA logo"></div>
+                </div>
+                <div class="education-row">
+                    <div>
+                        <h4>M.A. in Information Systems and Intelligent Systems (2021)</h4>
+                        <p>As a Mathematician, I have always enjoyed working with numbers and computer models. I am fascinated by technology and
+                            enjoy problem-solving. I decided to join This Master's program and I was fortunate to have a group of genuinely
+                            talented colleagues who have challenged me every step of the way. I have learned to offer unbiased, data-driven
+                            perspective and become more confident in decision making through data. </p>
+                    </div>
+                    <div><img src="static/imgs/home/INSEA_logo.png" alt="INSEA logo"></div>
+                </div>
+                <div class="education-row">
+                    <div>
+                        <h4>B.A. in Mathematics and Computer Science (2019)</h4>
+                        <p>During my time at UCA, I have taken numerous math courses including Probability theory, Graph Theory, Linear algebra
+                            and Calculus. I have also taken Couputer Science courses including C & Assembly language, Computer Architecture,
+                            Network Architectures, Database modeling, SQL & PL/SQL, Web Development(HTML5, CSS3, JS), Rule Based AI using Prolog
+                            and LISP and search algorithms such as Minmax and Dynamic programming. I have learned essential topics from
+                            Networks, Artifical Intelligence, Numerical Algorithms, Graph theory, Abstract Analysis. During my time at INSEA and
+                            my summer internship I was able to incorporate many of these lessons and get a deeper understanding of these topics.
+                        </p>
+                    </div>
+                    <div><img src="static/imgs/home/UCA_logo.png" alt="UCA logo"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
+        <div>
+            <h4>Achraf Bougadre</h4>
+        </div>
         <div class="socials">
             <ul>
                 <li>
                     <a href="mailto:abougadre@gmail.com" target="_blank" rel="noopener noreferrer" id="email">
-                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="currentColor"
                                 d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"
                                 style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
@@ -57,8 +151,8 @@
                 </li>
                 <li>
                     <a href="https://github.com/okimdone/" target="_blank" rel="noopener noreferrer" id="github">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <path fill="currentColor"
                                 d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
                                 style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
@@ -66,9 +160,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/abougadre/" target="_blank" rel="noopener noreferrer" id="linkedin">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <a href="https://www.linkedin.com/in/abougadre/" target="_blank" rel="noopener noreferrer"
+                        id="linkedin">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path fill="currentColor"
                                 d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
                                 style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
@@ -77,9 +172,11 @@
                 </li>
             </ul>
         </div>
-        <p>
-            Copyright © 2022 Achraf Bougadre
-        </p>
+        <div>
+            <p>
+                Copyright © 2022 Achraf Bougadre
+            </p>
+        </div>
     </footer>
 </body>
 
