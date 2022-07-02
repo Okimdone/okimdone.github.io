@@ -64,12 +64,16 @@ body .scan-lines::before {
   -webkit-animation: vline 6.25s linear infinite;
           animation: vline 6.25s linear infinite;
 }
-body > header {
-  height: 78px;
-  max-width: 1280px;
+body div.header-container {
+  background-color: black;
+  width: 100%;
+  height: 60px;
+}
+body div.header-container > header {
+  height: 100%;
+  max-width: 1520px;
   background-color: black;
   position: relative;
-  width: 100%;
   z-index: 2;
   box-sizing: border-box;
   padding-left: 2rem;
@@ -80,26 +84,26 @@ body > header {
   display: flex;
   flex-direction: row;
 }
-body > header a {
+body div.header-container > header a {
   text-decoration: none;
 }
-body > header a.header-logo {
+body div.header-container > header a.header-logo {
   font-family: Xolonium, sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   padding: 16px;
   width: 19em;
 }
-body > header a:visited {
-  color: #78899A;
+body div.header-container > header a:visited {
+  color: #FFF;
 }
-body > header > nav {
+body div.header-container > header > nav {
   width: 100%;
   font-weight: 300;
   display: flex;
   justify-content: flex-end;
 }
-body > header > nav > a {
+body div.header-container > header > nav > a {
   padding: 8px 12px;
 }
 body > main {
@@ -109,7 +113,7 @@ body > main {
   overflow: hidden;
 }
 body > main section .img {
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: 50%;
 }
@@ -120,7 +124,7 @@ body > main section#about {
   position: relative;
 }
 body > main section#about > figure.img-glitch {
-  background-image: url(../imgs/home/home_glitch.jpg);
+  background-image: url("../imgs/home/home_glitch.jpg");
   height: 100%;
   width: 100%;
   position: absolute;
@@ -147,21 +151,31 @@ body > main section#about > figure.img-glitch figure.img-glitch-flash {
 body > main section#about > figure.img-glitch figure.img-glitch-anim-1 {
   -webkit-animation-name: glitch-anim-1;
           animation-name: glitch-anim-1;
-  background-image: url(../imgs/home/home_glitch.jpg);
+  background-image: url("../imgs/home/home_glitch.jpg");
 }
 body > main section#about > figure.img-glitch figure.img-glitch-anim-2 {
   -webkit-animation-name: glitch-anim-1;
           animation-name: glitch-anim-1;
-  background-image: url(../imgs/home/home_glitch.jpg);
+  background-image: url("../imgs/home/home_glitch.jpg");
 }
 body > main section#about > figure.img-glitch figure.img-glitch-anim-3 {
   -webkit-animation-name: glitch-anim-3;
           animation-name: glitch-anim-3;
-  background-image: url(../imgs/home/home_glitch.jpg);
+  background-image: url("../imgs/home/home_glitch.jpg");
+}
+body > main section#about > figure.img-glitch figure.noise-flash {
+  -webkit-animation-name: noise-flash;
+          animation-name: noise-flash;
+  background-image: url("../imgs/home/home_glitch_2.jpg");
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-iteration-count: 7;
+          animation-iteration-count: 7;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
 }
 body > main section#about div#about-content {
   text-align: center;
-  background-color: #0d82bf;
   position: absolute;
   top: 35%;
   width: 100%;
@@ -174,6 +188,12 @@ body > main section#about div#about-content h1 {
 body > main section#about div#about-content h2 {
   font-size: 2.5rem;
   line-height: 1.8rem;
+}
+body > main section#experience {
+  max-width: 1764px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
 }
 body > main section#education div.education-row img {
   height: 100px;
@@ -782,5 +802,33 @@ body > footer div.socials ul li a > svg {
   5.5%, to {
     opacity: 0;
     transform: translateZ(0);
+  }
+}
+@-webkit-keyframes noise-flash {
+  0%, 3%, 5%, 42%, 44%, 100% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+  1% {
+    opacity: 0.4;
+    transform: scaleX(0.95) scaleY(1.2);
+  }
+  43% {
+    opacity: 0.6;
+    transform: scaleX(1.3) scaleY(1.1);
+  }
+}
+@keyframes noise-flash {
+  0%, 3%, 5%, 42%, 44%, 100% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+  1% {
+    opacity: 0.4;
+    transform: scaleX(0.95) scaleY(1.2);
+  }
+  43% {
+    opacity: 0.6;
+    transform: scaleX(1.3) scaleY(1.1);
   }
 }/*# sourceMappingURL=basic-style.css.map */
