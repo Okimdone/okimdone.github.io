@@ -1,0 +1,81 @@
+@font-face {
+    font-family: Xolonium;
+    src: url(../fonts/Xolonium/Xolonium-Bold.otf);
+}
+
+$default_bg_color: #050705;
+// $default_text_color: #78899A;
+$default_text_color: #FFF;
+// Retro colors : 
+$neon_bl: #120458;
+$neon_pr: #7a04eb;
+$neon_pi: #ff00a0;
+$neon_pi2: #fe75fe;
+$neon_or: #ff124f;
+$neon_ye: #faeb2c;
+$flash_color: #af4949;
+
+$breakpoints: (
+    phone: 640px,
+    tablet: 768px,
+    desktop: 1024px) !default;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto Mono",
+        sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient($neon_bl 11%, $neon_pr 100%
+    );
+
+    background-color: $neon_bl;
+    // color: $default_text_color;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    // font-size: 1.5rem;
+
+    /* termial hack lag effect */
+    .scan-lines {
+        position: fixed;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: 69;
+        pointer-events: none;
+
+        // height: 100px;
+        &::before {
+            display: block;
+            content: '';
+            width: 100vh;
+            pointer-events: none;
+            background: linear-gradient($neon_or 50%, $neon_pi 50%
+            );
+        background-size: 10% 4px;
+        opacity: .16;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1rem;
+        background: linear-gradient(to bottom, $neon_or 0%, $neon_pi 50%, $neon_pi2 51%, $neon_ye 100%);
+        opacity: 0.06;
+
+        animation: vline 6.25s linear infinite;
+    }
+}
+}
