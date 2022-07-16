@@ -2,6 +2,7 @@
   font-family: Xolonium;
   src: url(../fonts/Xolonium/Xolonium-Bold.otf);
 }
+/* header style */
 * {
   margin: 0;
   padding: 0;
@@ -11,9 +12,7 @@ body {
   font-family: "Roboto Mono", sans-serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #120458), to(#7a04eb));
-  background: linear-gradient(#120458 11%, #7a04eb 100%);
-  background-color: #120458;
+  background-color: #201f25;
   color: white;
   font-style: normal;
   font-weight: 400;
@@ -34,27 +33,76 @@ body .scan-lines {
   pointer-events: none;
 }
 body .scan-lines::before {
-  display: block;
-  content: "";
-  width: 100vh;
-  pointer-events: none;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff124f), color-stop(50%, #ff00a0));
-  background: linear-gradient(#ff124f 50%, #ff00a0 50%);
-  background-size: 10% 4px;
-  opacity: 0.16;
-}
-body .scan-lines::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff124f), color-stop(50%, #ff00a0), color-stop(51%, #fe75fe), to(#faeb2c));
-  background: linear-gradient(to bottom, #ff124f 0%, #ff00a0 50%, #fe75fe 51%, #faeb2c 100%);
-  opacity: 0.06;
+  height: 0.2rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(204, 0, 0)), color-stop(50%, #ff00a0), color-stop(51%, #fe75fe), to(#faeb2c));
+  background: linear-gradient(to bottom, rgb(204, 0, 0) 0%, #ff00a0 50%, #fe75fe 51%, #faeb2c 100%);
+  opacity: 0.05;
   -webkit-animation: vline 6.25s linear infinite;
           animation: vline 6.25s linear infinite;
+}
+
+div.header-container {
+  background-color: #201f25;
+  width: 100%;
+  height: 60px;
+}
+div.header-container header {
+  height: 100%;
+  max-width: 1146px;
+  position: relative;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+div.header-container header a {
+  text-decoration: none;
+}
+div.header-container header a.header-logo {
+  font-family: Xolonium, sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+div.header-container header a:visited {
+  color: #FFF;
+}
+div.header-container header a:hover {
+  -webkit-animation: intermittente 0.033s infinite alternate;
+          animation: intermittente 0.033s infinite alternate;
+  color: rgb(204, 0, 0);
+  text-shadow: 0 0 35px rgba(204, 0, 0, 0.3), 0 0 11px rgba(204, 0, 0, 0.3), 0 0 2px rgba(255, 0, 0, 0.3), 0 0 1px rgba(204, 0, 0, 0.3), 0 0 17px rgba(204, 0, 0, 0.3), 0 0 17px rgba(204, 0, 0, 0.3), 0 0 30px rgba(204, 0, 0, 0.3);
+}
+div.header-container header nav {
+  width: 100%;
+  font-weight: 800;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+div.header-container header nav a {
+  padding: 8px 12px;
 }
 
 :root {
@@ -659,59 +707,20 @@ body .scan-lines::before {
             transform: scaleX(1.3) scaleY(1.1);
   }
 }
-/* header style */
-div.header-container {
-  background-color: black;
-  width: 100%;
-  height: 60px;
+@-webkit-keyframes intermittente {
+  75% {
+    opacity: 0.7;
+  }
 }
-div.header-container header {
-  height: 100%;
-  max-width: 1134px;
-  background-color: black;
-  position: relative;
-  z-index: 2;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding-left: 2rem;
-  padding-right: 2rem;
+@keyframes intermittente {
+  75% {
+    opacity: 0.7;
+  }
+}
+footer, main section.education, main section.experience {
+  max-width: 704px;
   margin-left: auto;
   margin-right: auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-div.header-container header a {
-  text-decoration: none;
-}
-div.header-container header a.header-logo {
-  font-family: Xolonium, sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  width: 19em;
-}
-div.header-container header a:visited {
-  color: #FFF;
-}
-div.header-container header nav {
-  width: 100%;
-  font-weight: 300;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-div.header-container header nav a {
-  padding: 8px 12px;
 }
 
 main {
@@ -797,12 +806,6 @@ main section.about div.about-content h2 {
   font-size: 2.5rem;
   line-height: 1.8rem;
 }
-main section.experience {
-  max-width: 1764px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #000;
-}
 main section.education div.education-row img {
   height: 100px;
 }
@@ -814,9 +817,6 @@ footer div.socials ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 footer div.socials ul li {
   list-style: none;

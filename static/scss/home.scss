@@ -9,67 +9,12 @@ $animation_noise_iteration_count: 7;
 $glitch_img : '../imgs/home/home_glitch.jpg';
 // $glitch_img : '../imgs/home/2020_2.jpg';
 $glitch_2_img : '../imgs/home/home_glitch_2.jpg';
-/* header style */
 
-div.header-container {
-    background-color: black;
-    width: 100%;
-    height: 60px;
-
-    header {
-        height: 100%;
-        max-width: 1134px;
-
-        background-color: black;
-        position: relative;
-        z-index: 2;
-        box-sizing: border-box;
-
-        padding-left: 2rem;
-        padding-right: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-
-        // @media(min-width: 700px) {
-        //     margin-left: auto;
-        //     margin-right: auto;
-        //     width: 100px;
-        //     background-color: red;
-        // }
-        & a {
-
-            // Header Main Logo
-            &.header-logo {
-                font-family: Xolonium, sans-serif;
-                font-weight: 700;
-                font-size: 1.25rem;
-                width: 19em;
-            }
-
-            &:visited {
-                color: base.$default_text_color;
-            }
-
-            text-decoration: none;
-        }
-
-        // Navigation items
-        & nav {
-            width: 100%;
-            font-weight: 300;
-            display: flex;
-            justify-content: flex-end;
-
-            & a {
-                padding: 8px 12px;
-            }
-        }
-    }
-
-}
+%shared-max-width{
+    max-width: 704px;
+    margin-left: auto;
+    margin-right: auto;
+} 
 
 main {
     max-width: 2560px;
@@ -159,13 +104,11 @@ main {
     }
 
     & section.experience {
-        max-width: 1764px;
-        margin-left: auto;
-        margin-right: auto;
-        background: #000;
+        @extend %shared-max-width;
     }
 
     & section.education {
+        @extend %shared-max-width;
         div.education-row {
             & img {
                 height: 100px;
@@ -177,11 +120,12 @@ main {
 
 /* footer style */
 footer {
+    @extend %shared-max-width;
     & div.socials {
         & ul {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            // justify-content: center;
 
             & li {
                 list-style: none;
