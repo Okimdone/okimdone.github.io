@@ -110,7 +110,7 @@ div.header-container {
         display: flex;
         flex-direction: row;
         & a {
-
+            color: $default_text_color;
             // Header Main Logo
             &.header-logo {
                 font-family: Xolonium, sans-serif;

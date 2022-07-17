@@ -87,6 +87,7 @@ div.header-container header {
           flex-direction: row;
 }
 div.header-container header a {
+  color: #FFF;
   text-decoration: none;
 }
 div.header-container header a.header-logo {
