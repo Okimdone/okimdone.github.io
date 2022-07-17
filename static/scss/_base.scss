@@ -39,6 +39,10 @@ $breakpoints: (
     padding: 0;
 }
 
+a:visited{
+    color: $default_text_color;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     background-repeat: no-repeat;

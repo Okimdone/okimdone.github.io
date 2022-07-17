@@ -14,6 +14,10 @@ main section.experience, main section.education, footer {
   padding: 0;
 }
 
+a:visited {
+  color: #FFF;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   background-repeat: no-repeat;
