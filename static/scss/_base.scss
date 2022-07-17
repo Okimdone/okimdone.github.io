@@ -4,8 +4,7 @@
 }
 
 // $default_bg_color: #181a1b;
-$default_bg_color: #201f25;
-
+$default_bg_color: #111111;//#201f25;
 // $default_text_color: #78899A;
 $default_text_color: #FFF;
 /* header style */
@@ -23,6 +22,13 @@ $neon_or: #ff124f;
 $neon_ye: #faeb2c;
 $flash_color: #af4949;
 
+// Shared parameters 
+%shared-max-width{
+    max-width: 704px;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
 $breakpoints: (
     phone: 640px,
     tablet: 768px,
@@ -34,8 +40,7 @@ $breakpoints: (
 }
 
 body {
-    font-family: "Roboto Mono",
-        sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     background-repeat: no-repeat;
     background-attachment: fixed;
     // background: linear-gradient($neon_bl 11%, $neon_pr 100%
@@ -53,34 +58,36 @@ body {
     /* termial hack lag effect */
     .scan-lines {
         position: fixed;
-        display: flex;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         overflow: hidden;
-        z-index: 69;
         pointer-events: none;
-
-        
-        &::before {
-            content: '';
-            position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: .2rem;
-        background: linear-gradient(to bottom, $red-neon-0 0%, $neon_pi 50%, $neon_pi2 51%, $neon_ye 100%);
+        background: linear-gradient(black 50%, grey 50%);
+        background-size: 10% 3px;
         opacity: .05;
-        
-        animation: vline 6.25s linear infinite;
+        z-index: 0;
+
+        &> div::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: .2rem;
+            background: linear-gradient(to bottom, $red-neon-0 0%, $neon_pi 50%, $neon_pi2 51%, $neon_ye 100%);
+            opacity: 1;
+            animation: vline 6.25s linear infinite;
+            z-index: 3;
+        }
     }
-}
 }
 
 
 div.header-container {
-    background-color: #201f25;
+    background-color: $default_bg_color;//#201f25;
     width: 100%;
     height: 60px;
 
@@ -98,34 +105,29 @@ div.header-container {
         align-items: center;
         display: flex;
         flex-direction: row;
-
-        // @media(min-width: 700px) {
-        //     margin-left: auto;
-        //     margin-right: auto;
-        //     width: 100px;
-        //     background-color: red;
-        // }
         & a {
+
             // Header Main Logo
             &.header-logo {
                 font-family: Xolonium, sans-serif;
                 font-weight: 900;
                 font-size: 1.25rem;
-                white-space:nowrap
+                white-space: nowrap
             }
 
             &:visited {
                 color: $default_text_color;
             }
+
             &:hover {
                 animation: intermittente 0.033s infinite alternate;
                 color: $red-neon-0 ;
-                text-shadow: 0 0 35px $red-neon-1, 
-                    0 0 11px $red-neon-1, 
-                    0 0 2px $red-neon-2, 
-                    0 0 1px $red-neon-3, 
-                    0 0 17px $red-neon-1, 
-                    0 0 17px $red-neon-3, 
+                text-shadow: 0 0 35px $red-neon-1,
+                    0 0 11px $red-neon-1,
+                    0 0 2px $red-neon-2,
+                    0 0 1px $red-neon-3,
+                    0 0 17px $red-neon-1,
+                    0 0 17px $red-neon-3,
                     0 0 30px $red-neon-3;
                 // background-color: red;
                 // box-shadow:  0px 0px 35px $red-neon-1, 
@@ -154,4 +156,125 @@ div.header-container {
         }
     }
 
+}
+
+/* footer style */
+footer {
+    @extend %shared-max-width;
+    // background-color: red;
+    max-width:888px;
+    min-height: 95px;
+    padding-top:5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    & div.socials {
+        display: inline-block;
+        flex-wrap: nowrap;
+        height: 57px;
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            // justify-content: center;
+
+            & li {
+                list-style: none;
+                margin-right: 10px;
+
+                // margin: auto;
+                & a {
+                    display: block;
+                    height: 40px;
+                    width: 40px;
+                    background-color: white;
+                    color: black;
+                    transform: perspective(16px) rotate(-15deg) skew(20deg) translate(0, 0);
+                    box-shadow: -15px 15px 4px rgb(0, 0, 0, 0.5);
+                    transition: 0.5s;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 5.3px;
+                        left: -10.9px;
+                        height: 100%;
+                        width: 11px;
+                        background: #b1b1b1;
+                        transition: 0.5s;
+                        transform: rotate(0deg) skewY(-45deg);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 40px;
+                        left: -6.2px;
+                        height: 11px;
+                        width: 100%;
+                        background: #b1b1b1;
+                        transition: 0.5s;
+                        transform: rotate(0deg) skewX(-45deg);
+                    }
+
+                    &.email {
+                        color: #bb001b;
+                    }
+
+                    &.github {
+                        color: black;
+                    }
+
+                    &.linkedin {
+                        color: #0d82bf;
+                    }
+
+                    &.stackoverflow {
+                        color: #F58025;
+                    }
+
+                    &:hover {
+                        transform: perspective(16px) rotate(-15deg) skew(20deg) translate(3px, -7px);
+                        box-shadow: -30px 30px 25px rgb(0, 0, 0, 0.5);
+
+                        &.email,
+                        &.email::before,
+                        &.email::after {
+                            background-color: #bb001b;
+                            color: white;
+                        }
+
+                        &.github,
+                        &.github::before,
+                        &.github::after {
+                            background-color: black;
+                            color: white;
+                        }
+
+                        &.linkedin,
+                        &.linkedin::before,
+                        &.linkedin::after {
+                            background-color: #0d82bf;
+                            color: white;
+                        }
+                        
+                        &.stackoverflow,
+                        &.stackoverflow::before,
+                        &.stackoverflow::after {
+                            background-color: #F58025;
+                            color: white;
+                        }
+
+                    }
+
+                    & svg {
+                        margin: 17%;
+                        width: 66%;
+                    }
+                }
+            }
+        }
+    }
 }
