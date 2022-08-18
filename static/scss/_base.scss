@@ -24,16 +24,19 @@ $neon_ye: #faeb2c;
 $flash_color: #af4949;
 
 // Shared parameters 
-%shared-max-width{
+%shared-max-width {
     max-width: 704px;
     margin-left: auto;
     margin-right: auto;
-} 
+}
 
 $breakpoints: (
     phone: 640px,
     tablet: 768px,
-    desktop: 1024px) !default;
+    desktop: 1000px,
+    desktop24: 1024px,
+    desktop180: 1180px,
+    ) !default;
 
 * {
     margin: 0;
@@ -168,13 +171,13 @@ footer {
     @extend %shared-max-width;
     // background-color: red;
     max-width:888px;
-    min-height: 95px;
+    min-height: 12em;
     padding-top:5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    font-size: 12px;
 
     & div.socials {
         display: inline-block;

@@ -1,0 +1,297 @@
+@use 'base' as base;
+@use 'animations';
+@use "sass:map";
+
+%shared-grid {
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+    grid-column-gap: 8px;
+
+    @media (min-width: map.get(base.$breakpoints, 'tablet')) {
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+    }
+
+    @media (min-width: map.get(base.$breakpoints, 'desktop')) {
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+    }
+}
+
+html {
+    font-size: 14px;
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+
+    @media (min-width: map.get(base.$breakpoints, 'tablet')) {
+        font-size: 16px;
+    }
+}
+
+body {
+    //TODO
+    background-color: white;
+    color: black;
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+
+    a {
+        color: inherit;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        }
+
+        &:visited {
+            color: inherit;
+        }
+    }
+
+}
+
+d-title {
+    @extend %shared-grid;
+
+    padding: 2rem 0 1.5rem;
+    contain: layout style;
+    overflow-x: hidden;
+
+    @media (min-width: map.get(base.$breakpoints, 'tablet')) {
+        padding: 4rem 0 1.5rem;
+    }
+
+    h1 {
+        @media (min-width: map.get(base.$breakpoints, 'tablet')) {
+            font-size: 50px;
+        }
+
+        font-weight: 700;
+        line-height: 1.1em;
+        margin: 0 0 0.5rem;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 1.2rem;
+        line-height: 1.55em;
+        grid-column: text;
+    }
+
+    h1,
+    p {
+        grid-column: page;
+    }
+}
+
+d-article {
+    @extend %shared-grid;
+    overflow-x: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+    color: rgba(0, 0, 0, 0.8);
+    overflow: visible;
+
+    @media (min-width: map.get(base.$breakpoints, 'tablet')) {
+        font-size: 16px;
+    }
+
+    @media (min-width: map.get(base.$breakpoints, 'desktop24')) {
+        font-size: 1.06rem;
+        line-height: 1.7em;
+    }
+
+    >* {
+        grid-column: text;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.25em;
+        margin: 2rem 0 1.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 1rem;
+
+        @media (min-width: map.get(base.$breakpoints, 'desktop24')) {
+            font-size: 36px;
+        }
+
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.4em;
+        margin-bottom: 1em;
+        margin-top: 2em;
+
+        @media (min-width: map.get(base.$breakpoints, 'desktop24')) {
+            font-size: 20px;
+        }
+    }
+
+    li {
+        margin-bottom: 1em;
+    }
+
+    ul,
+    ol {
+        padding-left: 24px;
+    }
+    blockquote {
+        border-left: 2px solid rgba(0, 0, 0, 0.2);
+        padding-left: 2em;
+        font-style: italic;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 1em;
+    }
+}
+
+d-contents {
+    align-self: start;
+
+    @media (max-width: map.get(base.$breakpoints, 'desktop')) {
+        justify-self: start;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        padding-bottom: 0.5em;
+        margin-bottom: 1em;
+        padding-left: 0.25em;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: map.get(base.$breakpoints, 'desktop')) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        justify-self: end;
+        padding-right: 3em;
+        padding-left: 2em;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        @media (min-width: map.get(base.$breakpoints, 'desktop24')) {
+            font-size: 13px;
+        }
+
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 12px;
+        line-height: 1.5em;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: rgba(0, 0, 0, 0.8);
+            border-bottom: none;
+            text-decoration: none;
+        }
+
+        >div {
+            display: block;
+            outline: none;
+            margin-bottom: 0.5em;
+
+            a {
+                font-size: 13px;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        >ul {
+            margin-top: 0;
+            margin-bottom: 6px;
+            padding-left: 1em;
+
+            li {
+                margin-bottom: 0.25em;
+                list-style-type: none;
+            }
+        }
+
+    }
+}
+
+d-appendix {
+    @extend %shared-grid;
+
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+
+    h3 {
+        grid-column: page-start / text-start;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 1em;
+        margin-bottom: 0;
+        color: rgba(0, 0, 0, 0.65);
+
+        +* {
+            margin-top: 1em;
+        }
+    }
+
+    >* {
+        grid-column: text;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    ul, ol {
+        padding-left: 40px;
+        margin-bottom: 1em;
+    }
+    d-footnote-list {
+        grid-column: screen;
+    }
+        
+}
+
+d-footnote {
+    background-color: red;
+}
+
+d-cite {
+    background-color: green;
+}
+
+kbd {
+    margin: 0px 0.1em;
+    margin-top: 0px;
+    padding: 0.1em 0.6em;
+    font-size: 0.8em;
+    color: rgb(36, 39, 41);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(173, 179, 185);
+    border-radius: 3px;
+    box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    white-space: nowrap;
+    vertical-align: middle;
+}

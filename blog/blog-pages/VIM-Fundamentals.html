@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIM Fundamentals</title>
+
+    <link rel="stylesheet" href="../../static/css/blog-page.min.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <header>
+            <a class='header-logo' href="/">Achraf Bougadre</a>
+            <nav>
+                <a href="/">Home</a>
+                <!-- <a href="blog/">Blog</a> -->
+                <!-- <a href="#">Projects</a> -->
+                <a href="static/cv/RESUME_ACHRAF_BOUGADRE.pdf" target="_blank">Resume</a>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <d-title>
+            <h1 id='vim'>VIM Fundamentals</h1>
+            <p> Vim is a highly configurable text editor built to make creating and changing any kind of text very
+                efficient.</p>
+        </d-title>
+        <d-article>
+            <d-contents>
+                <nav>
+                    <h3>Contents</h3>
+                    <div><a href="#the-terminology">The Terminology</a></div>
+                    <div><a href="#opening-vim">Opening Vim</a></div>
+                    <ul>
+
+                        <li> <a href="#vim-modes-"> Vim MODES</a></li>
+                        <li> <a href="#basic-navigation-"> Basic navigation</a></li>
+                        <li> <a href="#delete-yank-post--visual-mode">Delete, Yank, Post & Visual Mode</a></li>
+                        <li> <a href="#insert-mode">Insert Mode</a></li>
+                    </ul>
+                    <div><a href="#customization">Customization</a></div>
+                    <ul>
+                        <li> <a href="#saving-your-setting-with-vimrc">Saving your setting with .vimrc</a></li>
+                        <li> <a href="#color-scheme"> Color Scheme</a></li>
+                    </ul>
+                    <div> <a href="#file--navigation">File & Navigation</a></div>
+                    <ul>
+                        <li> <a href="#netrw">Directory Navigation and Screen Splitting</a></li>
+                        <li> <a href="#marks"> Marks</a></li>
+                        <li> <a href="#alternate-files--jumplist"> Alternate files & jumplist</a></li>
+                    </ul>
+
+                    <div><a href="#plugins-1">Plugins</a></div>
+                    <div><a href="#search--replace">Search & replace</a></div>
+                </nav>
+            </d-contents>
+            <div>
+                <p>Vim is a text editor that is a clone of the vi editor, which was created around 1976. Despite its age, vim is one of the most popular editors in the world, and it is available on virtually every computing platform (or vi is available). vim has a bit of a learning curve, meaning that you may get somewhat frustrated with it until you have used it a few times.</p>
+                <p id="introduction">Vim comes in many flavors : </p>
+                <ul>
+                    <li>NeoVim</li>
+                    <li><a href='[https://spacevim.org/](https://spacevim.org/)'>spacevim</a></li>
+                    <li><a href='https://onivim.io/'>onivim2</a></li>
+                    
+                </ul>
+            </div>
+            <h2 id='the-terminology'>The Terminology</h2>
+            <ul>
+                <li><strong>Buffer</strong> : A buffer contains the text of the file and is what you edit.
+                    <code>:h buffer</code>
+                </li>
+                <li><strong>Window</strong> : Contains a buffer to display. Windows can be closed but the underlying
+                    buffer
+                    can
+                    remain in memory.
+                    <code>:h window</code>
+                </li>
+                <li><strong>Tabs</strong> : A tab is like another viewport. You can have many windows|splits open
+                    per tab.
+                    <code>:h tab</code>
+                </li>
+                <li><strong>Splits</strong> : A split simply refers to splitting the view port in N sections
+                    (various sizing
+                    and
+                    orientations available) to display windows.
+                    <code>:h split</code>
+                </li>
+                <li><strong>Motion</strong> : A command that moves the cursor (taken straight from the help docs,
+                    <code>:h motion</code>).
+                </li>
+
+            </ul>
+            <h2 id='opening-vim'>Opening Vim</h2>
+            <h3 id='vim-modes-'>Vim MODES</h3>
+            <ul>
+                <li>Normal: command mode <kbd>esc</kbd></li>
+                <li>Insert: typing mode <kbd>i</kbd></li>
+                <li>Visual <kbd>v</kbd> </li>
+                <li>Visual Line <kbd>V</kbd></li>
+
+            </ul>
+            <h3 id='basic-navigation-'>Basic navigation : </h3>
+            <ul>
+                <li><kbd>k</kbd>, <kbd>j</kbd>, <kbd>k</kbd>, <kbd>l</kbd> : basic navigation </li>
+                <li><kbd>z</kbd><kbd>z</kbd> : scroll down</li>
+                <li><kbd>w</kbd> : jump to next word </li>
+                <li><kbd>b</kbd> : jump to previous word</li>
+
+            </ul>
+            <h3 id='delete-yank-post--visual-mode'>Delete, Yank, Post &amp; Visual Mode</h3>
+            <ul>
+                <li>
+                    <p><kbd>y</kbd><kbd>y</kbd> : Copy line</p>
+                </li>
+                <li>
+                    <p><kbd>p</kbd> : Paste Line</p>
+                </li>
+                <li>
+                    <p><kbd>v</kbd> : Visual mode to select </p>
+                    <ul>
+                        <li><kbd>y</kbd> : copy</li>
+                        <li><kbd>x</kbd> : delete</li>
+
+                    </ul>
+                </li>
+                <li>
+                    <p><code>:reg</code> : <strong>registry</strong> of changes on the file </p>
+                </li>
+
+            </ul>
+            <h3 id='insert-mode'>Insert Mode</h3>
+            <ul>
+                <li><kbd>i</kbd> : left side of cursor</li>
+                <li><kbd>a</kbd> : right side of cursor</li>
+                <li><kbd>I</kbd> : left end of line</li>
+                <li><kbd>A</kbd> : right end of line</li>
+                <li><kbd>o</kbd> : insert new line below</li>
+                <li><kbd>O</kbd> : insert new line above</li>
+
+            </ul>
+            <h2 id='customization'>Customization</h2>
+            <ul>
+                <li><code>:set scrolloff=8</code> : automatically scroll for me when reaching 8 last lines</li>
+                <li><code>:set number</code> : show line numbers </li>
+                <li><code>:set relativenumber</code> : set line numbers as relative to where the cursor is currently
+                    at</li>
+
+            </ul>
+            <h3 id='saving-your-setting-with-vimrc'>Saving your setting with <code>.vimrc</code></h3>
+            <ul>
+                <li><code>:echo stdpath(&quot;config&quot;)</code> : check when the <code>.vimrc</code> file is at
+                </li>
+
+            </ul>
+            <h4 id='other-examples-for-vimrc'>Other examples for <code>.vimrc</code></h4>
+            <pre><code class='language-viml' lang='viml'>set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+</code></pre>
+            <h3 id='color-scheme'>Color Scheme </h3>
+            <p>To select a color scheme just type:</p>
+            <ul>
+                <li><code>:colorscheme &lt;tab&gt;</code></li>
+
+            </ul>
+            <h2 id='file--navigation'>File &amp; Navigation</h2>
+            <h3 id='netrw'>Directory Navigation and Screen Splitting</h3>
+            <ul>
+                <li>
+                    <p><code>$ vim .</code> : opening vim on a directory</p>
+                </li>
+                <li>
+                    <p><code>:Ex</code> : Explore the current directory tree again, when u re inside a file</p>
+                </li>
+                <li>
+                    <p><code>:Vex</code> : (V)ertical (ex)plore</p>
+                </li>
+                <li>
+                    <p><code>:Sex</code> : (S)plit (ex)plore</p>
+                </li>
+                <li>
+                    <p><kbd>CTRL-W</kbd> : </p>
+                    <ul>
+                        <li><kbd>v</kbd> : split current windows vertically</li>
+                        <li><kbd>s</kbd> : split current windows horizontally</li>
+                        <li><kbd>j</kbd> : go to the downward window</li>
+                        <li><kbd>k</kbd> : go to the upper window</li>
+                        <li><kbd>h</kbd> : go to the window on the left</li>
+                        <li><kbd>l</kbd> : go to the window on the right</li>
+                        <li><kbd>o</kbd> : Close everything but the selected window</li>
+
+                    </ul>
+                </li>
+                <li><code>:e &lt;filename&gt;</code> : edit a file in the current directory </li>
+
+            </ul>
+            <h3 id='marks'>Marks</h3>
+            <p>you can bookmark a line in a file and then be able to jump into it from either the same file if it s
+                a local
+                mark
+                marked with a lowercase letter, or from any other file if the mark is global with an uppercase
+                letter mark.
+            </p>
+            <ul>
+                <li><kbd>m</kbd> <kbd>&lt;lowercase_letter&gt;</kbd> : mark the current line as a local mark</li>
+                <li><kbd>m</kbd> <kbd>&lt;UPPERCASE_LETTER&gt;</kbd> : mark the current line as a global mark</li>
+                <li><kbd>&#39;</kbd> <kbd>&lt;letter&gt;</kbd> : Access the bookmarked line by typing the set letter
+                    of it
+                </li>
+
+            </ul>
+            <h3 id='alternate-files--jumplist'>Alternate files &amp; jumplist</h3>
+            <ul>
+                <li><kbd>CTRL-^</kbd> : equivalent to <kbd>alt+tab</kbd> on windows </li>
+
+            </ul>
+            <h2 id='plugins-1'>Plugins</h2>
+            <p>You need a plugin manager, then u just google and install what u like.</p>
+            <h2 id='search--replace'>Search &amp; replace</h2>
+            <ul>
+                <li>
+                    <p><kbd>/&lt;the-word-to-search&gt;</kbd> : search for a word. Press <kbd>n</kbd> and
+                        <kbd>N</kbd> to go
+                        to
+                        next or previous
+                    </p>
+                </li>
+                <li>
+                    <p><code>:set hls ic</code> : add highlighting to all the found results</p>
+                    <ul>
+                        <li><code>:nohls</code> : to disable it </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <p>Select with <kbd>v</kbd>, then type <kbd>:</kbd> and then run the search by adding
+                        <kbd>/&lt;the-word-to-search&gt;</kbd>, this way you would run a search only in the selected
+                        region
+                    </p>
+                </li>
+                <li>
+                    <p><code>:s/&lt;word_to_replace&gt;/&lt;new_word&gt;</code> : replace selected word</p>
+                </li>
+                <li>
+                    <p><code>:%s/&lt;word_to_replace&gt;/&lt;new_word&gt;</code> : replace selected word over the
+                        whole file
+                    </p>
+                </li>
+                <li>
+                    <p><code>:s/&lt;word_to_replace&gt;/&lt;new_word&gt;/g</code> : replace selected word globally
+                        <strong>across that line</strong>
+                    </p>
+                </li>
+                <li>
+                    <p><code>:s/&lt;word_to_replace&gt;/&lt;new_word&gt;/gc</code> : replace selected word globally
+                        <strong>across that line</strong>, but ask for confirmation for each selected item
+                    </p>
+                </li>
+                <li>
+                    <p>you can also use reg expression with () to select expressions into variables called
+                        <code>\1 \2 \3 ...</code>
+                    </p>
+                </li>
+            </ul>
+        </d-article>
+    </main>
+    <footer>
+        <div class="footer__item socials">
+            <ul>
+                <li>
+                    <a href="mailto:abougadre@gmail.com" target="_blank" rel="noopener noreferrer" class="email">
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"
+                                style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/okimdone/" target="_blank" rel="noopener noreferrer" class="github">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path fill="currentColor"
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/abougadre/" target="_blank" rel="noopener noreferrer"
+                        class="linkedin">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                                style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://stackoverflow.com/users/9725116/pixel-tek" target="_blank"
+                        rel="noopener noreferrer" class="stackoverflow">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="stackoverflow" class=""
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130">
+                            <g xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd">
+                                <polygon fill="#BBBBBB" points="88 80 99 80 99 124 0 124 0 80 11 80 11 113 88 113" />
+                                <path fill="currentColor" fill-rule="currentColor"
+                                    d="M22.9878906,76.73 L77.0128906,88.085 L79.2838906,77.285 L25.2588906,65.925 L22.9878906,76.73 Z M30.1368906,50.861 L80.1828906,74.169 L84.8448906,64.16 L34.7978906,40.852 L30.1368906,50.861 Z M43.9848906,26.308 L86.4128906,61.639 L93.4788906,53.154 L51.0508906,17.824 L43.9848906,26.308 Z M71.3718906,0.192 L62.5118906,6.782 L95.4598906,51.082 L104.319891,44.493 L71.3718906,0.192 Z M22,102 L77,102 L77,91 L22,91 L22,102 Z" />
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__item">
+            <p>
+                Copyright © 2022 Achraf Bougadre
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
