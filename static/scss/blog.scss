@@ -1,2 +1,101 @@
 @use 'base' as base;
 @use 'animations';
+
+dt-article {
+    display: block;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 1.55em;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    // background-color: rgb(24, 26, 27);
+    background-image: none;
+    color: rgba(232, 230, 227, 0.8);
+
+    @media (min-width: 768px) {
+        margin-top: 60px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 20px;
+    }
+
+    @media (min-width: 1080px) {
+        width: 984px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div.b-preview {
+        // background-color: red;
+        text-decoration: none;
+        overflow: hidden;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        padding: 24px 0;
+        color: rgba(232, 230, 227, 0.8);
+        font: 17px/1.55em -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+
+        @media (min-width: 1024px) {
+            font-size: 20px;
+        }
+
+        div.b-meta {
+            font-size: 12px;
+            line-height: 1.4em;
+            margin-bottom: 18px;
+
+            @media (min-width: 768px) {
+                float: left;
+                width: 15%;
+                margin-top: 8px;
+            }
+
+            color: rgba(232, 230, 227, 0.8);
+
+            div.b-publishedDate {
+                margin-right: 1em;
+            }
+
+            div.b-tags {
+                margin-top: 1em;
+            }
+        }
+
+        &>a {
+            border-bottom-color: rgba(140, 130, 115, 0.4);
+            text-decoration-color: currentcolor;
+            color: inherit;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+
+            .b-description {
+                h2 {
+                    margin: 0 0 6px 0;
+                    line-height: 1.2em;
+                    font-style: normal;
+                    font-size: 24px;
+                    font-weight: 700;
+
+                    @media (min-width: 768px) {
+                        font-size: 26px;
+                    }
+
+                }
+
+                p {
+                    margin: 0 0 12px 0;
+                    line-height: 1.4em;
+                    font-size: 16px;
+
+                    @media (min-width: 768px) {
+                        margin: 0 0 12px 0;
+                        line-height: 1.5em;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

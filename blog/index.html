@@ -26,8 +26,40 @@
             </nav>
         </header>
     </div>
-    <main>
-    </main>
+    <dt-article>
+        <script>
+            async function loadBlogs() {
+                const response = await fetch('blog-list.json');
+                const blog_response = await response.json();
+                const main_tag = document.querySelector('dt-article');
+
+                blog_response.forEach(element => {
+                    main_tag.innerHTML += `
+                        <div class="b-preview"> 
+                            <div class='b-meta'> 
+                                <div class='b-publishedDate'>
+                                    ${element.ctime_str} 
+                                </div>
+                                <div class='b-tags'>
+                                </div>
+                            </div>
+                            <a href='${element.href}'>
+                                <div class='b-description'>
+                                    <h2>
+                                        ${element.title} 
+                                    </h2>
+                                    <p>
+                                        ${element.intro} 
+                                    </p>
+                                </div>
+                            <a>
+                        </div>`
+                });
+            }
+
+            loadBlogs()
+        </script>
+    </dt-article>
     <footer>
         <div class="footer__item socials">
             <ul>
@@ -63,8 +95,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://stackoverflow.com/users/9725116/pixel-tek" target="_blank" rel="noopener noreferrer"
-                        class="stackoverflow">
+                    <a href="https://stackoverflow.com/users/9725116/pixel-tek" target="_blank"
+                        rel="noopener noreferrer" class="stackoverflow">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="stackoverflow" class=""
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130">
                             <g xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd">

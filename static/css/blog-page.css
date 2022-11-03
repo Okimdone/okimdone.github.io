@@ -41,9 +41,9 @@ body .scan-lines {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, black), color-stop(50%, grey));
   background: linear-gradient(black 50%, grey 50%);
-  background-size: 10% 3px;
-  opacity: 0.05;
-  z-index: 0;
+  background-size: 1% 1px;
+  opacity: 0.01;
+  z-index: 11000;
 }
 body .scan-lines > div::before {
   content: "";
@@ -123,8 +123,7 @@ div.header-container header nav a {
 /* footer style */
 footer {
   max-width: 888px;
-  min-height: 12em;
-  padding-top: 5px;
+  padding-top: 11px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,8 +158,8 @@ footer div.socials ul li {
 }
 footer div.socials ul li a {
   display: block;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background-color: white;
   color: black;
   -webkit-transform: perspective(16px) rotate(-15deg) skew(20deg) translate(0, 0);
@@ -173,10 +172,10 @@ footer div.socials ul li a {
 footer div.socials ul li a::before {
   content: "";
   position: absolute;
-  top: 5.3px;
-  left: -10.9px;
+  top: 2.8px;
+  left: -6.2px;
   height: 100%;
-  width: 11px;
+  width: 6px;
   background: #b1b1b1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -186,9 +185,9 @@ footer div.socials ul li a::before {
 footer div.socials ul li a::after {
   content: "";
   position: absolute;
-  top: 40px;
-  left: -6.2px;
-  height: 11px;
+  top: 30.3px;
+  left: -3.2px;
+  height: 6px;
   width: 100%;
   background: #b1b1b1;
   -webkit-transition: 0.5s;
@@ -1089,7 +1088,8 @@ d-appendix > * {
 d-appendix p {
   margin-bottom: 1em;
 }
-d-appendix ul, d-appendix ol {
+d-appendix ul,
+d-appendix ol {
   padding-left: 40px;
   margin-bottom: 1em;
 }

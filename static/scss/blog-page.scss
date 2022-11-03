@@ -145,6 +145,7 @@ d-article {
     ol {
         padding-left: 24px;
     }
+
     blockquote {
         border-left: 2px solid rgba(0, 0, 0, 0.2);
         padding-left: 2em;
@@ -264,14 +265,16 @@ d-appendix {
         margin-bottom: 1em;
     }
 
-    ul, ol {
+    ul,
+    ol {
         padding-left: 40px;
         margin-bottom: 1em;
     }
+
     d-footnote-list {
         grid-column: screen;
     }
-        
+
 }
 
 d-footnote {
